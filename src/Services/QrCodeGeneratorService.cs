@@ -9,7 +9,7 @@ namespace QRCodeGenerator.Services
         public Bitmap GenerateImage(string text)
         {
             var qrGenerator = new QRCoder.QRCodeGenerator();
-            var qrCodeData = qrGenerator.CreateQrCode("The text which should be encoded.", QRCoder.QRCodeGenerator.ECCLevel.Q);
+            var qrCodeData = qrGenerator.CreateQrCode(text, QRCoder.QRCodeGenerator.ECCLevel.Q);
             var qrCode = new QRCode(qrCodeData);
             var qrCodeImage = qrCode.GetGraphic(20);
             return qrCodeImage;
